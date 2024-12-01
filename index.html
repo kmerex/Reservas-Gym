@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness S.A.C</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1><i class="fas fa-running"></i> Fitness S.A.C</h1>
+            <ul class="nav-links">
+                <li><a href="#reserva" onclick="showSection('reserva')">Reserva de Entrenamientos</a></li>
+                <li><a href="#planes" onclick="showSection('planes')">Planes de Membresía</a></li>
+                <li><a href="#registro-sesion" onclick="showSection('registro-sesion')">Informe de incidentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://media.istockphoto.com/id/543208510/es/foto/pareja-joven-haciendo-ejercicios-de-resistencia-en-una-m%C3%A1quina-al-aire-libre.jpg?s=612x612&w=0&k=20&c=eANercBw3dhK9ugxH4ZaqVNVQ8ApYMy9y3N8U97RkPE="
+                alt="Portada" />
+            <p>Selecciona una opción para comenzar</p>
+        </section>
+
+        <section id="reserva" class="content-section hidden">
+            <h2>Reserva de Entrenamientos</h2>
+
+            <label for="fecha-reserva">Seleccionar Fecha:</label>
+            <input type="date" id="fecha-reserva" placeholder="Selecciona una fecha" />
+
+            <label for="tipo-entrenamiento">Seleccionar Tipo de Entrenamiento:</label>
+            <select id="tipo-entrenamiento">
+                <option value="" disabled selected>Seleccionar tipo</option>
+                <option value="personal">Personal</option>
+                <option value="grupal">Grupal</option>
+            </select>
+
+            <label for="horario">Seleccionar Horario Disponible:</label>
+            <select id="horario">
+                <option value="" disabled selected>Seleccionar horario</option>
+                <option>10:00 AM</option>
+                <option>2:00 PM</option>
+                <option>6:00 PM</option>
+            </select>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Trainer</th>
+                        <th>Espacios Disponibles</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Grupal</td>
+                        <td>Juan Pérez</td>
+                        <td>5</td>
+                        <td><button>Reservar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Personal</td>
+                        <td>Sofía Vergara</td>
+                        <td>8</td>
+                        <td><button>Reservar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Grupal</td>
+                        <td>Tom Hanks</td>
+                        <td>2</td>
+                        <td><button>Reservar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Personal</td>
+                        <td>Michelle Smith</td> <!-- Nuevo entrenador añadido -->
+                        <td>4</td>
+                        <td><button>Reservar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Grupal</td>
+                        <td>David Johnson</td> <!-- Nuevo entrenador añadido -->
+                        <td>10</td>
+                        <td><button>Reservar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+    <section id="planes" class="content-section hidden">
+        <h2>Planes de Membresía</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plan</th>
+                    <th>Duración</th>
+                    <th>Entrenamientos</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Básico</td>
+                    <td>1 mes</td>
+                    <td>15 grupales / 5 personales</td>
+                    <td>S/80</td>
+                    <td><button class="seleccionar" data-precio="80" data-plan="Básico">Seleccionar</button></td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>3 meses</td>
+                    <td>50 grupales / 20 personales</td>
+                    <td>S/200</td>
+                    <td><button class="seleccionar" data-precio="200" data-plan="Premium">Seleccionar</button></td>
+                </tr>
+                <tr>
+                    <td>VIP</td> <!-- Nuevo plan añadido -->
+                    <td>6 meses</td>
+                    <td>80 grupales / 40 personales</td>
+                    <td>S/320</td>
+                    <td><button class="seleccionar" data-precio="320" data-plan="VIP">Seleccionar</button></td>
+                </tr>
+                <tr>
+                    <td>Corporativo</td> <!-- Nuevo plan añadido -->
+                    <td>12 meses</td>
+                    <td>100 grupales / 50 personales</td>
+                    <td>S/550</td>
+                    <td><button class="seleccionar" data-precio="550" data-plan="Corporativo">Seleccionar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <label for="tipo-tarjeta">Selecciona tipo de tarjeta:</label>
+        <select id="tipo-tarjeta">
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+        </select>
+    
+        <button id="btn-pagar">Ver Pago</button>
+    </section>
+
+
+    <section id="registro-sesion" class="content-section hidden">
+        <h2>Registro de Sesiones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Asistencia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ana López</td>
+                    <td>2024-11-30</td>
+                    <td>
+                        <select class="asistencia">
+                            <option value="Asistió">Asistió</option>
+                            <option value="Faltó">Faltó</option>
+                        </select>
+                    </td>
+                    <td><button class="btn-guardar">Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Carlos Martínez</td>
+                    <td>2024-11-30</td>
+                    <td>
+                        <select class="asistencia">
+                            <option value="Asistió">Asistió</option>
+                            <option value="Faltó">Faltó</option>
+                        </select>
+                    </td>
+                    <td><button class="btn-guardar">Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Andy Goita</td>
+                    <td>2024-11-29</td>
+                    <td>
+                        <select class="asistencia">
+                            <option value="Asistió">Asistió</option>
+                            <option value="Faltó">Faltó</option>
+                        </select>
+                    </td>
+                    <td><button class="btn-guardar">Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Alex Higalgo</td>
+                    <td>2024-11-28</td>
+                    <td>
+                        <select class="asistencia">
+                            <option value="Asistió">Asistió</option>
+                            <option value="Faltó">Faltó</option>
+                        </select>
+                    </td>
+                    <td><button class="btn-guardar">Guardar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <!-- Sección de Informes -->
+        <h2>Informe de la Sesión</h2>
+        <form id="form-informe">
+            <label for="fecha-sesion-informe">Fecha de la Sesión:</label>
+            <input type="date" id="fecha-sesion-informe" value="2024-12-01" required>
+    
+            <label for="detalle-incidentes">Detalles de Incidentes:</label>
+            <textarea id="detalle-incidentes" placeholder="Describe cualquier incidente ocurrido..."
+                required>El equipo de sonido falló durante la sesión grupal.</textarea>
+    
+            <label for="acciones-correctivas">Acciones Correctivas:</label>
+            <textarea id="acciones-correctivas" placeholder="Describe las acciones tomadas..."
+                required>Se cambió el equipo de sonido por uno de repuesto, y la clase se reanudó sin más contratiempos.</textarea>
+    
+            <button type="submit">Enviar Informe</button>
+        </form>
+    
+        
+        <form id="form-informe">
+            <label for="fecha-sesion-informe-2">Fecha de la Sesión:</label>
+            <input type="date" id="fecha-sesion-informe-2" value="2024-12-02" required>
+    
+            <label for="detalle-incidentes-2">Detalles de Incidentes:</label>
+            <textarea id="detalle-incidentes-2" placeholder="Describe cualquier incidente ocurrido..."
+                required>Un cliente sufrió una leve caída durante la sesión personal.</textarea>
+    
+            <label for="acciones-correctivas-2">Acciones Correctivas:</label>
+            <textarea id="acciones-correctivas-2" placeholder="Describe las acciones tomadas..."
+                required>Se aplicó hielo en el área afectada, y se solicitó que se realizara un chequeo médico.</textarea>
+    
+            <button type="submit">Enviar Informe</button>
+        </form>
+    
+    </section> 
+
+    </main>
+    <div class="container">
+        <button onclick="VolverInicio()" id="btn-inicio">Volver</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

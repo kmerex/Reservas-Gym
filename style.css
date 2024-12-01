@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+h1,
+h2 {
+    color: #dffdfd;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #048C8C;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2ca99;
+}
+
+.hero img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #011640;
+    font-size: 18px;
+}
+
+/* Section Styles */
+.content-section {
+    padding: 20px;
+    background-color: #048C8C;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+label,
+select,
+input,
+textarea {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Contenedor para centrar el botón */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-inicio {
+    padding: 10px;
+    background-color: #F26938;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tabla de registro */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #048C8C;
+    color: white;
+}
+
+select,
+button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #F26938;
+    color: white;
+    cursor: pointer;
+}
+
+/* Formulario */
+#form-informe {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+#form-informe textarea,
+#form-informe input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #F26938;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #bb8c7d;
+}
+
